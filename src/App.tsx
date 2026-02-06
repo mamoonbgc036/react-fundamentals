@@ -1,10 +1,10 @@
-import Child from './Child';
+import StatusManager from './StatusManager';
 
 
 function App() {
   return (
     <div>
-      <Child />
+      <StatusManager />
     </div>
   )
 }
