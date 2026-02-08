@@ -1,10 +1,10 @@
-import StatusManager from './StatusManager';
+import SignUpForm from './SignUpForm';
 
 
 function App() {
   return (
     <div>
-      <StatusManager />
+      <SignUpForm />
     </div>
   )
 }
