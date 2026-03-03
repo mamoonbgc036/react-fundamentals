@@ -1,10 +1,11 @@
-import SignUpForm from './SignUpForm';
+import UserCard from './UserCard';
 
 
 function App() {
   return (
     <div>
-      <SignUpForm />
+      <UserCard name="mamoon" email="test@test.com" role="admin" />
+      <UserCard name="noman" email="test@test.com" role="admin" avatar="https://avartar.png" />
     </div>
   )
 }

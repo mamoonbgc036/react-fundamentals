@@ -1,14 +1,15 @@
-type UserProps = {
-    name: string;
-    age: number;
+interface UserProps {
+    name: string,
+    email: string,
+    role: string,
+    avatar?: string
 }
 
-function UserCard({ name, age }: UserProps) {
+export default function UserCard(props: UserProps) {
     return (
         <div>
-            <h3>{name} is {age} year old</h3>
+            <p>{props.name} - {props.email} - {props.role}</p>
+            {props.avatar ? (<img src={props.avatar} />) : (<p>No avatar provided</p>)}
         </div>
     )
 }
-
-export default UserCard;
