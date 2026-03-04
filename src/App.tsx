@@ -1,11 +1,10 @@
-import UserCard from './UserCard';
+import Counter from './Counter';
 
 
 function App() {
   return (
     <div>
-      <UserCard name="mamoon" email="test@test.com" role="admin" />
-      <UserCard name="noman" email="test@test.com" role="admin" avatar="https://avartar.png" />
+      <Counter />
     </div>
   )
 }
