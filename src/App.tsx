@@ -1,10 +1,10 @@
-import Counter from './Counter';
+import ToDos from './ToDos';
 
 
 function App() {
   return (
     <div>
-      <Counter />
+      <ToDos />
     </div>
   )
 }
