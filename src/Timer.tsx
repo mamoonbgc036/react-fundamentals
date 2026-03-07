@@ -22,6 +22,10 @@ export default function Timer() {
         return () => clearInterval(interval)
     }, [isRunning])
 
+    useEffect(() => {
+        document.title = "Its " + second
+    })
+
     return (
         <>
             <p>{second}</p>
