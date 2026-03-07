@@ -1,10 +1,10 @@
-import ToDos from './ToDos';
+import Timer from './Timer';
 
 
 function App() {
   return (
     <div>
-      <ToDos />
+      <Timer />
     </div>
   )
 }
