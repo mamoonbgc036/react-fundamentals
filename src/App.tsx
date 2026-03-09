@@ -1,12 +1,21 @@
-import Timer from './Timer';
+import { useState } from "react";
+import ProductList from "./ProductList";
+import Cart from "./Cart";
 
+export default function App() {
+  const [cart, setCart] = useState<string[]>([]);
 
-function App() {
+  const handleAdd = (productName: string) => {
+    setCart([...cart, productName]);
+  };
+
   return (
-    <div>
-      <Timer />
-    </div>
-  )
-}
+    <div style={{ padding: "20px" }}>
+      <h1>Shopping Cart</h1>
 
-export default App;
+      <ProductList onAdd={handleAdd} />
+
+      <Cart items={cart} />
+    </div>
+  );
+}
