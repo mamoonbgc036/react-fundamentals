@@ -1,21 +1,18 @@
-import { useState } from "react";
-import ProductList from "./ProductList";
-import Cart from "./Cart";
+import { useState, useRef, useEffect } from 'react'
 
 export default function App() {
-  const [cart, setCart] = useState<string[]>([]);
+  const [count, setCount] = useState<number>(0);
+  const renderCount = useRef<number>(0);
 
-  const handleAdd = (productName: string) => {
-    setCart([...cart, productName]);
-  };
+  useEffect(() => {
+    renderCount.current += 1; // update ref — no re-render triggered!
+  });
 
   return (
-    <div style={{ padding: "20px" }}>
-      <h1>Shopping Cart</h1>
-
-      <ProductList onAdd={handleAdd} />
-
-      <Cart items={cart} />
-    </div>
+    <>
+      <p>Count: {count}</p>
+      <p>Component rendered {renderCount.current} times</p>
+      <button onClick={() => setCount(count + 1)}>+1</button>
+    </>
   );
 }
