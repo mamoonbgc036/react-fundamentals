@@ -1,5 +1,5 @@
-import StopWatch from './StopWatch';
+import Form from './Form';
 
 export default function App() {
-  return <StopWatch />;
+  return <Form />;
 }
