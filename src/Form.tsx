@@ -51,7 +51,6 @@ export default function RegistrationForm() {
                         value={formData.username}
                         onChange={handleChange}
                         className="w-full border px-2 py-1 rounded"
-                        required
                     />
                 </div>
 
@@ -63,7 +62,6 @@ export default function RegistrationForm() {
                         value={formData.email}
                         onChange={handleChange}
                         className="w-full border px-2 py-1 rounded"
-                        required
                     />
                 </div>
 
@@ -76,7 +74,6 @@ export default function RegistrationForm() {
                         onChange={handleChange}
                         className="w-full border px-2 py-1 rounded"
                         min={0}
-                        required
                     />
                 </div>
 
@@ -88,7 +85,6 @@ export default function RegistrationForm() {
                         value={formData.country}
                         onChange={handleChange}
                         className="w-full border px-2 py-1 rounded"
-                        required
                     />
                 </div>
 
