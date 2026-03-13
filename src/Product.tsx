@@ -1,16 +1,32 @@
-type ProductProps = {
+interface ProductList {
     onAdd: (product: string) => void
 }
-export default function Product({ onAdd }: ProductProps) {
+
+interface Product {
+    name: string,
+    price: number
+}
+
+export default function Product({ onAdd }: ProductList) {
     const products = [
-        { name: "Laptop", price: 1000 },
-        { name: "Phone", price: 600 },
-        { name: "Headphones", price: 200 }
-    ];
+        {
+            name: 'soap',
+            price: 50
+        },
+        {
+            name: 'mobile',
+            price: 5000
+        },
+        {
+            name: 'laptop',
+            price: 50000
+        }
+    ]
+
     return (
         <>
             {
-                products.map(product => <li>{product.name} - {product.price} <button onClick={() => onAdd(product.name)}>add</button></li>)
+                products.map((product: Product) => <li>{product.name}--{product.price} <button onClick={() => onAdd(product.name)}>Add</button></li>)
             }
         </>
     )
