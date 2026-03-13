@@ -1,5 +1,5 @@
-import UseState from './UseState';
+import Input from './Input';
 
 export default function App() {
-  return <UseState />;
+  return <Input />;
 }
