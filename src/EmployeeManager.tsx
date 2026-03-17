@@ -14,14 +14,28 @@ export default function EmployeeManager() {
         ]
     )
 
-    const handleAdd = () => [
-        // setEmployee([...employees, {}])
-    ]
+    const [formData, setFormData] = useState<Employee>({
+        name: "",
+        department: "",
+        salary: 0
+    })
+
+    const handleSubmit = () => {
+        setEmployee([...employees, formData])
+    }
+
+    const handleOnchange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const { name, value } = e.target;
+        setFormData({ ...formData, [name]: value })
+    }
 
     return (
         <>
-            <form action="">
-                <button onClick={handleAdd}>Add</button>
+            <form onSubmit={handleSubmit}>
+                <input type="text" onChange={handleOnchange} name="name" />
+                <input type="text" onChange={handleOnchange} name="department" />
+                <input type="text" onChange={handleOnchange} name="salary" />
+                <button type="submit">Add</button>
             </form>
 
             <table><thead><tr><th>Name</th><th>Department</th><th>Salary</th><th>Action</th></tr></thead><tbody>

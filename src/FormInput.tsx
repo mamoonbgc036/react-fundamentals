@@ -24,7 +24,7 @@ export default function FormInput() {
         <>
             <form onSubmit={handleSubmit}>
                 <input type="text" name="userName" onChange={handleChange} />
-                <input type="text" name="age" onChange={handleChange} />
+                <input type="text" name="age" onChange={(e) => handleChange(e)} />
                 <button type="submit">Submit</button>
             </form>
             {isSubmit && (
