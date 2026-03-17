@@ -4,14 +4,15 @@ interface Employee {
     id: number,
     name: string,
     department: string,
-    salary: number
+    salary: number,
+    helighted: boolean
 }
 
 export default function EmployeeManager() {
     const [employees, setEmployee] = useState<Employee[]>(
         [
-            { id: 1, name: 'mamoon', department: 'Finance', salary: 50000 },
-            { id: 2, name: 'noman', department: 'Accounting', salary: 40000 }
+            { id: 1, name: 'mamoon', department: 'Finance', salary: 50000, helighted: false },
+            { id: 2, name: 'noman', department: 'Accounting', salary: 40000, helighted: false }
         ]
     )
 
@@ -19,7 +20,8 @@ export default function EmployeeManager() {
         id: Date.now(),
         name: "",
         department: "",
-        salary: 0
+        salary: 0,
+        helighted: false
     })
 
     const handleDelete = (id: number) => {
@@ -37,6 +39,10 @@ export default function EmployeeManager() {
         setFormData({ ...formData, [name]: value })
     }
 
+    const toggleHighlight = (id: number) => {
+        setEmployee(prev => prev.map(emp => emp.id == id ? { ...emp, helighted: !emp.helighted } : emp))
+    }
+
     return (
         <>
             <form onSubmit={handleSubmit}>
@@ -48,7 +54,7 @@ export default function EmployeeManager() {
 
             <table><thead><tr><th>Id</th><th>Name</th><th>Department</th><th>Salary</th><th>Action</th></tr></thead><tbody>
                 {
-                    employees.map(employee => <tr key={employee.id}><td>{employee.id}</td><td>{Date.now()}</td><td>{employee.name}</td><td>{employee.department}</td><td>{employee.salary}</td><td><button onClick={() => handleDelete(employee.id)}>Delete</button></td></tr>)
+                    employees.map(employee => <tr key={employee.id} style={{ background: employee.helighted ? "yellow" : "white" }}><td>{employee.id}</td><td>{Date.now()}</td><td>{employee.name}</td><td>{employee.department}</td><td>{employee.salary}</td><td><button onClick={() => handleDelete(employee.id)}>Delete</button></td><td></td><td><button onClick={() => toggleHighlight(employee.id)}>{employee.helighted ? 'DeHighlight' : 'Highlight'}</button></td></tr>)
                 }
             </tbody></table>
         </>
