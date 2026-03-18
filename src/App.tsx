@@ -1,7 +1,7 @@
-import EmployeeManager from './EmployeeManager'
+import TestReducer from './TestReducer'
 
 export default function App() {
   return (
-    <EmployeeManager />
+    <TestReducer />
   )
 }
