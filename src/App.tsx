@@ -1,11 +1,9 @@
-import TestReducer from './TestReducer'
-import State from './State'
+import ShopCart from './ShopCart'
 
 export default function App() {
   return (
     <>
-      <TestReducer />
-      <State />
+      <ShopCart />
     </>
   )
 }
